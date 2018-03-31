@@ -16,6 +16,7 @@ module.exports = function (RED) {
 			} else {
 				// check the payload
 				if(msg.payload) {
+					if(msg.key) {node.key = msg.key;}
 					// debugging message
 					node.debug('Encrypting payload using '+node.algorithm);
 					// decrypt with CryptoJS
